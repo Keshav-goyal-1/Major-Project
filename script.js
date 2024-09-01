@@ -1,6 +1,6 @@
-function Loading_Animation(){
+function LoadingAnimation(){
     var timer = document.querySelector("#line #line1-part1 h5");
-    var count =0;
+    var count = 0;
 
     var tl = gsap.timeline();
     tl.from("#line h1,#line h2",{
@@ -48,8 +48,54 @@ function Loading_Animation(){
     })
 
     tl.to("#loader",{
-        display:none
+        display:"none"
     })
 }
+function cursorAnimation(){
+    document.addEventListener("mousemove",function(dets){
+        console.log("he")
+        gsap.from("#crsr",{
+            left:dets.x,
+            top:dets.y
+        })
+    })
+    
+    Shery.makeMagnet("#nav-part2 h4", {});
+}
 
-Loading_Animation();
+function LandingPageAnimation(){
+var tl = gsap.timeline()
+tl.from("#nav",{
+    opacity:0
+})
+tl.from(".hero h1,.hero h2,.hero h3",{
+    y:120,
+    stagger:0.2,
+    // duration:0.5
+})
+
+var hero3 = document.querySelector("#hero3")
+hero3.addEventListener("mouseenter",function(){
+    gsap.to(".box",{
+        opacity:1,
+        scale:1,
+        // duration:0.3
+    })
+})
+hero3.addEventListener("mouseleave",function(){
+    gsap.to(".box",{
+        opacity:0,
+        scale:0,
+        // duration:0.3
+    })
+})
+hero3.addEventListener("mousemove",function(dets){
+    gsap.to(".box",{
+        x: dets.x- 490,
+        y: dets.y-400
+    })
+})
+}
+LoadingAnimation();
+cursorAnimation();
+LandingPageAnimation()

@@ -11,6 +11,14 @@ html,body{
     width: 100%;
 }
 
+#crsr{
+    height: 2.3vw;
+    width: 2.3vw;
+    border-radius: 50%;
+    border: 1px solid #ffffffbe;
+    position: fixed;
+    z-index: 99;
+}
 #loader{
     height: 100%;
     width: 100%;
@@ -101,15 +109,103 @@ html,body{
 }
 
 
-
-
-
 #main{
     position:relative;
     background-color: #030303;
 }
 
+
+
 #page1{
     height: 100vh;
+    width: 100%;
     background-color: #151515;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* padding-bottom: 10%; */
+}
+
+#page1 #nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.3vw 4.5vw;
+}
+
+#nav-part2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3vw;
+}
+
+#nav-part2 h4{
+    font-size: 1vw;
+    font-weight: 500;
+}
+
+.hero{
+    /* background-color: aqua; */
+    display: flex;
+    width: 72%;
+    margin-left: 27%;
+    overflow: hidden;
+    height: fit-content;
+    align-items: center;
+    position: relative;
+    z-index: 999;
+/* ; */
+}
+
+.hero:nth-child(2){
+    margin-top: 18vh;
+}
+
+.hero h1{
+    font-size: 7.2vw;
+    line-height: 7vw;
+    
+    text-transform: uppercase;
+    font-weight: 550;
+}
+.hero h2,.hero h3{
+    font-size: 7.2vw;
+    line-height: 7vw;
+    text-transform: uppercase;
+    font-weight: 550;
+}
+.hero h2:hover{
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+    font-weight: 500;
+}
+
+.hero h2{
+    border-bottom: 5px solid #fff;
+}
+#page1 .box{
+    height: 70vh;
+  
+    margin-left: 27%;
+   opacity: 0;
+    position: absolute;
+    margin-top: 13%;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#page1 .box #box1{
+    height: 37vh;
+    width: 23vw;
+    z-index: -1;
+    background-color: #0057B4;
+    margin-bottom: 3px;
+    /* opacity: 0; */
+}
+#page1 .box #box2{
+    height: 37vh;
+    width: 23vw;
+    z-index: -1;
+    background-color: #F7CE00;
+    /* opacity: 0; */
 }
